@@ -64,16 +64,15 @@ alias stats="autojump -s"
 
 #######
 # conf inside .dotfiles repo
-DOTFILES="~/.dotfiles"
-DOTFILES="~/.config"
+DOTFILES="~/dot"
 
 # open .zshrc with neovim
-alias zconf="vim ~/.zshrc"
-alias aliasconf='${EDITOR:-nvim} "${ZDOTDIR:-$HOME}"/zshrc.d/alias.zsh'
+alias zconf="${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
+alias aliasconf="${EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
 
 # open i3 configs with i3
-alias i3conf="${EDITOR:-nvim} $DOTFILES/i3/config"
-alias i3bconf="${EDITOR:-nvim} $DOTFILES/i3status/config"
+alias i3conf="${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
+alias i3bconf="${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
 
 # neovim conf
 alias vimconf='${EDITOR:-nvim} "${I3DIR:-$HOME}"/.config/nvim/init.lua'
