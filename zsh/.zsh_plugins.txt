@@ -1,0 +1,13 @@
+# .zsh_plugins.txt
+
+zsh-users/zsh-autosuggestions
+
+# now, configure and run compinit to initialize completions
+belak/zsh-utils path:completion
+
+zsh-users/zsh-syntax-highlighting
+bossjones/boss-git-zsh-plugin
+# nylo-andry/zsh-themes
+#jthat/zsh-pronto
+# rafaelsq/nuts.zsh-theme
+akz92/clean
