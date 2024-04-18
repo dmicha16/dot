@@ -15,3 +15,19 @@ stow i3
 ## Removing a stow
 
 `stow -D`
+
+
+### Dependencies
+
+#### tmux
+
+[snazzy theme](https://github.com/ivnvxd/tmux-snazzy)
+
+
+#### zsh
+
+```
+sudo apt install zsh -y
+```
+
+
