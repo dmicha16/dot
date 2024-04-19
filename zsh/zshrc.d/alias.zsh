@@ -29,11 +29,9 @@ alias vim=nvim
 alias gd="git diff"
 alias gl="git log --oneline --decorate --graph"
 alias gas="git add . && git status"
-alias do_daily="cd ~/notes/Turf\ Tank/ && gas && git commit -m 'files' && cd-"
 
 #######
 # misc
-alias naut="nautilus --no-desktop"
 
 #######
 # alias to dump aliases
