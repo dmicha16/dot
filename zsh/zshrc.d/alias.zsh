@@ -1,6 +1,10 @@
 # Daves aliases
 
 #######
+# source company (private aliases)
+source "${0:A:h}"/company_aliases.zsh
+
+#######
 # exa
 alias ll="exa --long --header"
 alias lla="exa --long --all"
