@@ -54,8 +54,6 @@ alias tka="tmux kill-server"
 # aliases made with the scripts/create_alias.sh
 alias create_alias="~/scripts/create_alias.sh"
 alias ca="create_alias"
-alias prodt="cd repos/tt_robot/common/src/tt_prod_test_server" 
-alias ttest="cd repos/tt_test_sw/" 
 alias clear_proton="sudo nmcli connection delete pvpn-ipv6leak-protection" 
 alias pt="cd repos/pt/tt_pt_sw" 
 
