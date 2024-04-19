@@ -5,7 +5,8 @@
 alias ll="exa --long --header"
 alias lla="exa --long --all"
 alias ls="exa"
-alias tree="exa --tree --level=2 --long"
+alias tree="exa --tree --all --level=2 --long --ignore-glob='*.git'"
+alias tree3="exa --tree --all --level=3 --long --ignore-glob='*.git'"
 
 #######
 # batcat
