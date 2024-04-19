@@ -30,4 +30,4 @@ stow i3
 sudo apt install zsh -y
 ```
 
-
+akjsndakjsndaskj

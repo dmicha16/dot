@@ -29,6 +29,7 @@ alias vim=nvim
 alias gd="git diff"
 alias gl="git log --oneline --decorate --graph"
 alias gas="git add . && git status"
+alias gds="echo 'GIT STAGED \n' && git diff --staged"
 
 #######
 # misc
