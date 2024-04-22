@@ -7,7 +7,4 @@ belak/zsh-utils path:completion
 
 zsh-users/zsh-syntax-highlighting
 bossjones/boss-git-zsh-plugin
-# nylo-andry/zsh-themes
-#jthat/zsh-pronto
-# rafaelsq/nuts.zsh-theme
-akz92/clean
+dmicha16/greenclean
