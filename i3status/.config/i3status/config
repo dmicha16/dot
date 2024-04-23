@@ -9,18 +9,21 @@ order += "volume master"
 order += "path_exists VPN"
 order += "battery 0"
 order += "memory"
-order += "load"
+order += "cpu_usage"
+order += "wireless wlp0s20f3"
+
+# order += "load"
 # order += "tztime local"
 # order += "tztime berlin"
 
-wireless wlan0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip"
-        format_down = "W: down"
+wireless wlp0s20f3 {
+       format_up = "WIFI: %essid, IP: %ip"
+       format_down = "W: down"
 }
 
 volume master {
-        format = "♪: %volume"
-        format_muted = "♪: muted (%volume)"
+        format = "VOL: %volume"
+        format_muted = "VOL: muted (%volume)"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -32,11 +35,11 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining %emptytime"
+        format = "%status %percentage"
         format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
+        status_chr = "CHR:"
+        status_bat = "BAT:"
+        status_unk = "UNK:"
         status_full = "☻ FULL"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
@@ -75,14 +78,19 @@ cpu_temperature 0 {
         path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
+cpu_usage {
+        format = "CPU: %usage"
+	path = "/proc/stat"
+}
+
 memory {
-        format = "%used"
+        format = "MEM: %used/%total"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 disk "/" {
-        format = "%free"
+        format = "DISK: %free"
 }
 
 read_file uptime {
