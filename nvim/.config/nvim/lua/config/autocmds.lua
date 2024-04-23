@@ -24,3 +24,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "*/lua/config/*",
     callback = reload_config,
 })
+
+
+-- Auto-open Lexplore when Neovim starts
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    command = "Lexplore",
+    nested = true  -- Allows other autocmds that might depend on this to execute
+})
