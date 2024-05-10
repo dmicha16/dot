@@ -77,7 +77,7 @@ alias i3conf="${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
 alias i3bconf="${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
 
 # neovim conf
-alias vimconf='${EDITOR:-nvim} "${I3DIR:-$HOME}"/.config/nvim/init.lua'
+alias vimconf="${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
 
 # open tmux conf
 alias tmuxconf="${EDITOR:-nvim} ~/.tmux.conf"
