@@ -69,15 +69,16 @@ alias stats="autojump -s"
 DOTFILES="~/dot"
 
 # open .zshrc with neovim
-alias zconf="${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
-alias aliasconf="${EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
+alias zconf="pushd $DOTFILES ${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
+alias aliasconf="$pushd $DOTFILES {EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
 
 # open i3 configs with i3
-alias i3conf="${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
-alias i3bconf="${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
+alias i3conf="pushd $DOTFILES ${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
+alias i3bconf="pushd $DOTFILES ${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
 
 # neovim conf
-alias vimconf="${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
+alias vimconf="pushd $DOTFILES ${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
+alias vimconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
 
 # open tmux conf
 alias tmuxconf="${EDITOR:-nvim} ~/.tmux.conf"
