@@ -1,3 +1,5 @@
+-- autocommands
+
 -- Function to unload a Lua module
 local function unload_module(module_name)
   package.loaded[module_name] = nil
@@ -24,4 +26,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "*/lua/config/*",
     callback = reload_config,
 })
-
