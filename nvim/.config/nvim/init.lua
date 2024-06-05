@@ -55,3 +55,6 @@ require("plugins.colorscheme")
 
 -- enable the colorscheme
 vim.cmd("colorscheme kanagawa")
+vim.cmd([[autocmd VimEnter * Neotree]])
+
+require("plugins.neotree")
