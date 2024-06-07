@@ -8,3 +8,4 @@ belak/zsh-utils path:completion
 zsh-users/zsh-syntax-highlighting
 bossjones/boss-git-zsh-plugin
 dmicha16/greenclean
+MichaelAquilina/zsh-you-should-use

@@ -69,7 +69,7 @@ alias stats="autojump -s"
 DOTFILES="~/dot"
 
 # open .zshrc with neovim
-alias zconf="pushd $DOTFILES ${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
+alias zconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
 alias aliasconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
 
 # open i3 configs with i3
