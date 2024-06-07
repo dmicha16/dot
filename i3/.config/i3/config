@@ -24,6 +24,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 #i3 lock
 #bindsym $mod+p exec i3lock --image /home/dave/Downloads/nyc2.png --tiling
+# bindsym $mod+p exec i3lock --image /home/dave/Pictures/wp.png --tiling
 bindsym $mod+p exec i3lock -c 000000
 
 # start a terminal
@@ -73,7 +74,7 @@ bar {
 
 
 # setting wallpaper using feh
-exec_always --no-startup-id feh --bg-scale /home/dave/Pictures/wp.jpeg
+exec_always --no-startup-id feh --bg-scale /home/dave/Pictures/wp.jpg
 
 # brightness control with brightnessctl (might need sudo)
 # bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
