@@ -13,7 +13,8 @@ require("plugins.colorscheme")
 
 require("plugins.neotree")
 
-vim.cmd([[autocmd VimEnter * Neotree]])
+-- open Neotree on startup, but keep focus on files with 'show'
+vim.cmd([[autocmd VimEnter * Neotree show]])
 
 -- enable the colorscheme
 vim.cmd("colorscheme kanagawa")
