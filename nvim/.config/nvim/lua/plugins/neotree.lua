@@ -1,4 +1,6 @@
 require("neo-tree").setup({
 	filesystem = {
-		hide_dotfiles = false
+		filtered_items = {
+			hide_dotfiles = false
+		}
 	}})
