@@ -4,8 +4,8 @@ return {
 	branch = "v3.x",
 	dependencies = {
 	    {"nvim-lua/plenary.nvim"},
-	    {"nvim-tree/nvim-web-devicons"}, -- not strictly required, but recommended
 	    {"MunifTanjim/nui.nvim"},
+	    {"nvim-tree/nvim-web-devicons"}
 	-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 },
 },
@@ -14,6 +14,18 @@ return {
 },
 {
 	"folke/persistence.nvim"
+},
+{
+	"ibhagwan/fzf-lua"
+},
+{
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+},
+{
+    "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}
+},
+{
+    "nvim-treesitter/nvim-treesitter"
 }
-
 }
