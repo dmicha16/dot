@@ -34,6 +34,7 @@ alias gd="git diff"
 alias gl="git log --oneline --decorate --graph"
 alias gas="git add . && git status"
 alias gds="echo 'GIT STAGED \n' && git diff --staged"
+alias gdf="git diff | diff-so-fancy"
 
 #######
 # misc
@@ -69,15 +70,15 @@ alias stats="autojump -s"
 DOTFILES="~/dot"
 
 # open .zshrc with neovim
-alias zconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
-alias aliasconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
+alias zconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/.zshrc"
+alias aliasconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/zsh/zshrc.d/alias.zsh"
 
 # open i3 configs with i3
-alias i3conf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
-alias i3bconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
+alias i3conf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/i3/.config/i3/config"
+alias i3bconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/i3status/.config/i3status/config"
 
 # neovim conf
-alias vimconf="pushd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
+alias vimconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
 
 # ssh conf
 alias sshconf="${EDITOR:-nvim} ~/.ssh/config"

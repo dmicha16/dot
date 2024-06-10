@@ -14,6 +14,8 @@ setopt incappendhistory
 # Load Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+# nice names for antidote plugin dirs
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 # Set your prompt
 autoload -Uz promptinit && promptinit
@@ -23,6 +25,7 @@ autoload -Uz promptinit && promptinit
 source ~/zshrc.d/vi_mode.zsh
 source ~/zshrc.d/autosuggestions.zsh
 source ~/zshrc.d/alias.zsh
+source ~/zshrc.d/bindings.zsh
 
 ######
 # autojump (manually installed, see repos/autojump
@@ -52,4 +55,4 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.cargo/env"
 
-# zprof
+#zprof
