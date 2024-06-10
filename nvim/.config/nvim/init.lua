@@ -8,13 +8,14 @@ require("config.options")
 require("config.lazy")
 require("config.keymaps")
 
-require("config.autocmds")
 require("plugins.colorscheme")
-
 require("plugins.neotree")
+require("plugins.persistence")
 
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])
 
 -- enable the colorscheme
 vim.cmd("colorscheme kanagawa")
+
+require("config.autocmds")
