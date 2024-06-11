@@ -7,6 +7,7 @@ require("config.options")
 
 require("config.lazy")
 
+-- load plugins
 require("plugins.colorscheme")
 require("plugins.neotree")
 require("plugins.persistence")
@@ -21,5 +22,6 @@ vim.cmd([[autocmd VimEnter * Neotree show]])
 -- enable the colorscheme
 vim.cmd("colorscheme kanagawa")
 
+-- load autocmds and keymaps
 require("config.autocmds")
 require("config.keymaps")
