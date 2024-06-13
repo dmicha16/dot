@@ -27,5 +27,12 @@ return {
 },
 {
     "nvim-treesitter/nvim-treesitter"
+},
+{
+    "numToStr/Comment.nvim"
+},
+{
+    "danymat/neogen"
 }
+
 }

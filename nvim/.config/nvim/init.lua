@@ -15,6 +15,8 @@ require("plugins.fzf-lua")
 require("plugins.lualine")
 require("plugins.indent")
 require("plugins.treesitter")
+require("plugins.comment")
+require("plugins.neogen")
 
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])
