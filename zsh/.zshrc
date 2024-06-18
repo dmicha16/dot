@@ -55,4 +55,8 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.cargo/env"
 
+######
+# start ssh-agent and add ssh configurations to avoid repeated passphrase prompsts in single session
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
 #zprof

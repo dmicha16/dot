@@ -5,12 +5,12 @@
 source "${0:A:h}"/company_aliases.zsh
 
 #######
-# exa
-alias ll="exa --long --header"
-alias lla="exa --long --all"
-alias ls="exa"
-alias tree="exa --tree --all --level=2 --long --ignore-glob='*.git'"
-alias tree3="exa --tree --all --level=3 --long --ignore-glob='*.git'"
+# eza
+alias ll="eza --long --header"
+alias lla="eza --long --all"
+alias ls="eza"
+alias tree="eza --tree --all --level=2 --long --ignore-glob='*.git'"
+alias tree3="eza --tree --all --level=3 --long --ignore-glob='*.git'"
 
 #######
 # batcat
