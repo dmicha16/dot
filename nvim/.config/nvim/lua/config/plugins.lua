@@ -33,6 +33,9 @@ return {
 },
 {
     "danymat/neogen"
+},
+{
+    "neovim/nvim-lspconfig"
 }
 
 }

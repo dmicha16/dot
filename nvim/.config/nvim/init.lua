@@ -2,6 +2,8 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.lsp.set_log_level("debug")
+
 -- load config
 require("config.options")
 
@@ -17,6 +19,18 @@ require("plugins.indent")
 require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.neogen")
+
+local lspconfig = require('lspconfig')
+
+lspconfig.basedpyright.setup {
+    settings = {
+    basedpyright = {
+      disableOrganizeImports = true,
+      disableTaggedHints = true,
+      typeCheckingMode = 'off',
+    },
+  },
+}
 
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])

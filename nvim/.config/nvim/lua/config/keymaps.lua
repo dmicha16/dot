@@ -43,3 +43,6 @@ vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").loa
 -- neogen
 vim.api.nvim_set_keymap('n', '<leader>nd', ':Neogen<CR>', { noremap = true, silent = true })
 
+-- lsp
+vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
