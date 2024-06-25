@@ -36,6 +36,9 @@ return {
 },
 {
     "neovim/nvim-lspconfig"
+},
+{
+    "mfussenegger/nvim-lint"
 }
 
 }

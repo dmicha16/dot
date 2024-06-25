@@ -32,6 +32,8 @@ lspconfig.basedpyright.setup {
   },
 }
 
+require("plugins.lint")
+
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])
 

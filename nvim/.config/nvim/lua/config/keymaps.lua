@@ -1,4 +1,4 @@
-local opts = {silent = true}
+local opts = {noremap = ture, silent = true}
 
 -- keymaps for fzf-lua
 vim.keymap.set("n", "<c-P>",
@@ -24,6 +24,8 @@ end, opts)
 
 -- save all files and quit
 vim.keymap.set("n", "<leader>qa", ":wa | qa<CR>", opts)
+vim.api.nvim_set_keymap('n', '<leader>wq', ':wa<CR>:qa<CR>', { noremap = true, silent = true })
+
 
 -- center the screen after page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
@@ -46,3 +48,6 @@ vim.api.nvim_set_keymap('n', '<leader>nd', ':Neogen<CR>', { noremap = true, sile
 -- lsp
 vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
+-- restore the session for the current directory
+vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
