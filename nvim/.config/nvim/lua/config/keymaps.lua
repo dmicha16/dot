@@ -1,11 +1,13 @@
-local opts = {noremap = ture, silent = true}
+local opts = {noremap = true, silent = true}
 
--- keymaps for fzf-lua
-vim.keymap.set("n", "<c-P>",
-  "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+-- Keymaps for fzf-lua
+vim.keymap.set("n", "<c-P>", function()
+  require('fzf-lua').files()
+end, { silent = true })
 
-vim.keymap.set("n", "<c-B>",
-  "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+vim.keymap.set("n", "<c-B>", function()
+  require('fzf-lua').buffers()
+end, { silent = true })
 
 vim.keymap.set("n", "<C-F>", function()
   require('fzf-lua').grep({
@@ -21,33 +23,35 @@ vim.keymap.set("n", "<C-K>", function()
   })
 end, opts)
 
-
--- save all files and quit
+-- Save all files and quit
 vim.keymap.set("n", "<leader>qa", ":wa | qa<CR>", opts)
-vim.api.nvim_set_keymap('n', '<leader>wq', ':wa<CR>:qa<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>wq", ":wa<CR>:qa<CR>", opts)
 
-
--- center the screen after page up/down
+-- Center the screen after page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
--- remap gc in comment nvim to <leader>c
-vim.api.nvim_set_keymap('v', '<leader>c', ':lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
--- Remap <leader>c to comment out the current line in normal mode
-vim.api.nvim_set_keymap('n', '<leader>c', ':lua require("Comment.api").toggle.linewise.current()<CR>', opts)
+-- Remap gc in comment nvim to <leader>c
+vim.keymap.set('v', '<leader>c', function()
+  require("Comment.api").toggle.linewise(vim.fn.visualmode())
+end, opts)
+vim.keymap.set('n', '<leader>c', function()
+  require("Comment.api").toggle.linewise.current()
+end, opts)
 
+-- Persistence
+-- Restore the session for the current directory
+vim.keymap.set("n", "<leader>qs", function()
+  require("persistence").load()
+  vim.cmd('Neotree show')
+end, opts)
 
--- persistance
--- restore the session for the current directory
-vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>|<cmd>Neotree show<cr>]], {})
+-- Neogen
+vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
 
+-- LSP
+vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
--- neogen
-vim.api.nvim_set_keymap('n', '<leader>nd', ':Neogen<CR>', { noremap = true, silent = true })
-
--- lsp
-vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-
--- restore the session for the current directory
-vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
+-- Keymap for highlighting all text in a file with Ctrl+A
+vim.keymap.set('n', '<C-a>', 'ggVG', opts)

@@ -30,3 +30,37 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4'
 })
 
+-- automatically resize splits when window is resized
+vim.api.nvim_create_augroup('AutoResizeSplits', { clear = true })
+
+vim.api.nvim_create_autocmd('VimResized', {
+  group = 'AutoResizeSplits',
+  pattern = '*',
+  command = 'wincmd ='
+})
+
+-- highlight yanked text
+vim.api.nvim_create_augroup('HighlightYank', { clear = true })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = 'HighlightYank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 })
+  end
+})
+
+-- show absolute line numbers in inactive windows
+vim.api.nvim_create_augroup('RelativeLineNumbers', { clear = true })
+
+vim.api.nvim_create_autocmd({'BufEnter', 'FocusGained', 'InsertLeave'}, {
+  group = 'RelativeLineNumbers',
+  pattern = '*',
+  command = 'set relativenumber'
+})
+
+vim.api.nvim_create_autocmd({'BufLeave', 'FocusLost', 'InsertEnter'}, {
+  group = 'RelativeLineNumbers',
+  pattern = '*',
+  command = 'set norelativenumber'
+})
