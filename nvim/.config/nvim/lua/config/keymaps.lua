@@ -52,6 +52,8 @@ vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
 -- LSP
 vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { noremap = true, silent = true })
+
 
 -- Keymap for highlighting all text in a file with Ctrl+A
 vim.keymap.set('n', '<C-a>', 'ggVG', opts)
