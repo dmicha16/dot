@@ -23,6 +23,11 @@ vim.keymap.set("n", "<C-K>", function()
   })
 end, opts)
 
+vim.keymap.set("n", "<C-J>", function()
+  require('fzf-lua').lgrep_curbuf({
+  })
+end, opts)
+
 -- Save all files and quit
 vim.keymap.set("n", "<leader>qa", ":wa | qa<CR>", opts)
 vim.keymap.set("n", "<leader>wq", ":wa<CR>:qa<CR>", opts)
@@ -30,14 +35,6 @@ vim.keymap.set("n", "<leader>wq", ":wa<CR>:qa<CR>", opts)
 -- Center the screen after page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
-
--- Remap gc in comment nvim to <leader>c
-vim.keymap.set('v', '<leader>c', function()
-  require("Comment.api").toggle.linewise(vim.fn.visualmode())
-end, opts)
-vim.keymap.set('n', '<leader>c', function()
-  require("Comment.api").toggle.linewise.current()
-end, opts)
 
 -- Persistence
 -- Restore the session for the current directory

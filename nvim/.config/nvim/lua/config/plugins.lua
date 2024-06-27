@@ -68,6 +68,8 @@ return {
   config = function()
     -- Your LSP settings here
   end,
+},
+{
+    "lepture/vim-jinja"
 }
-
 }
