@@ -8,29 +8,29 @@ To manage my dotfiles, I'm using [gnu stow](https://www.gnu.org/software/stow/).
 ## List of tools
 
 ### Editing
-- nvim
+- [nvim](https://github.com/neovim/neovim)
 - Occasionally vscode
 
 ### Terminal
 
-- tmux
-- zsh
-    - antidote plugin loader
+- [tmux](https://github.com/tmux/tmux)
+- [zsh](https://en.wikipedia.org/wiki/Z_shell)
+    - [antidote](https://github.com/mattmc3/antidote) plugin loader
     - fish autosuggest
     - my own theme
     -
-- autojump
-- eza
-- fd
-- ripgrep
-- fzf
+- [autojump](https://github.com/wting/autojump)
+- [eza](https://github.com/eza-community/eza)
+- [fd](https://github.com/sharkdp/fd)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fzf](https://github.com/junegunn/fzf)
 
 ### UI
-- i3wm
-- i3status
+- [i3wm](https://i3wm.org/)
+- [i3status](https://i3wm.org/docs/i3status.html)
 
 ### Notes
-- obsidian
+- [obsidian.md](https://obsidian.md/)
 
 ## Adding .config configurations to this repo
 
@@ -55,13 +55,6 @@ stow i3
 #### tmux
 
 [snazzy theme](https://github.com/ivnvxd/tmux-snazzy)
-
-
-#### zsh
-
-- could fork the theme and change the colors + fix the clock
-- then antidote could just download my own fork of the theme
-- make the update to the awesomezsh as well
 
 ```
 sudo apt install zsh -y
