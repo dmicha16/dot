@@ -58,8 +58,8 @@ alias tka="tmux kill-server"
 # aliases made with the scripts/create_alias.sh
 alias create_alias="~/scripts/create_alias.sh"
 alias ca="create_alias"
-alias clear_proton="sudo nmcli connection delete pvpn-ipv6leak-protection" 
-alias pt="cd repos/pt/tt_pt_sw" 
+alias clear_proton="sudo nmcli connection delete pvpn-ipv6leak-protection"
+alias pt="cd repos/pt/tt_pt_sw"
 
 #######
 # autojump
@@ -79,6 +79,7 @@ alias i3bconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/i3status/.config/i3stat
 
 # neovim conf
 alias vimconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/nvim/.config/nvim/init.lua"
+alias keymaps="cd $DOTFILES/nvim/.config/nvim/lua/config && ${EDITOR:-nvim} keymaps.lua"
 
 # ssh conf
 alias sshconf="${EDITOR:-nvim} ~/.ssh/config"
