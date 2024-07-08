@@ -39,7 +39,7 @@ vim.cmd([[autocmd VimEnter * Neotree show]])
 vim.cmd([[autocmd VimEnter * "COQnow --shut-up"]])
 
 -- enable the colorscheme
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme catppuccin")
 
 -- load autocmds and keymaps
 require("config.autocmds")

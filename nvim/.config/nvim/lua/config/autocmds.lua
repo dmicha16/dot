@@ -33,16 +33,15 @@ vim.api.nvim_create_autocmd('FileType', {
 -- ensure proper indents for yaml files
 vim.api.nvim_create_augroup('YamlIndent', { clear = true })
 
-vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
-  group = 'YamlIndent',
-  pattern = '*.yml',
-  command = 'setfiletype yaml'
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*.yml",
+  command = "set filetype=yaml"
 })
 
 vim.api.nvim_create_autocmd('FileType', {
   group = 'YamlIndent',
   pattern = {'yml', 'yaml'},
-  command = 'setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 autoindent smartindent'
+  command = 'setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 autoindent'
 })
 
 -- automatically resize splits when window is resized

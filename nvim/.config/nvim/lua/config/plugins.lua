@@ -13,6 +13,9 @@ return {
 	"rebelot/kanagawa.nvim"
 },
 {
+    "catppuccin/nvim"
+},
+{
 	"folke/persistence.nvim"
 },
 {
