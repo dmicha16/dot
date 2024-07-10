@@ -35,7 +35,7 @@ vim.api.nvim_create_augroup('YamlIndent', { clear = true })
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   pattern = "*.yml",
-  command = "set filetype=yaml"
+  command = "set syntax=yaml"
 })
 
 vim.api.nvim_create_autocmd('FileType', {

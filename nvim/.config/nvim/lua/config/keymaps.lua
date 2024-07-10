@@ -46,6 +46,9 @@ end, opts)
 -- Neogen
 vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
 
+-- Neotree
+vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
+
 -- LSP
 vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
