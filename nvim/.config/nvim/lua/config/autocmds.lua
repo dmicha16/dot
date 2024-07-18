@@ -34,13 +34,13 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_augroup('YamlIndent', { clear = true })
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = "*.yml",
+  pattern = {'yml', 'sls', 'yaml'},
   command = "set syntax=yaml"
 })
 
 vim.api.nvim_create_autocmd('FileType', {
   group = 'YamlIndent',
-  pattern = {'yml', 'yaml'},
+  pattern = {'yml', 'sls', 'yaml'},
   command = 'setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 autoindent'
 })
 
