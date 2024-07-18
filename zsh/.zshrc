@@ -9,7 +9,7 @@ SAVEHIST=10000
 setopt incappendhistory
 
 #######
-# Daves antidote settings 
+# Daves antidote settings
 
 # Load Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
@@ -26,6 +26,7 @@ source ~/zshrc.d/vi_mode.zsh
 source ~/zshrc.d/autosuggestions.zsh
 source ~/zshrc.d/alias.zsh
 source ~/zshrc.d/bindings.zsh
+source ~/zshrc.d/fzf.zsh
 
 ######
 # autojump (manually installed, see repos/autojump
