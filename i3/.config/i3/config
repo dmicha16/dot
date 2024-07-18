@@ -15,7 +15,7 @@
 
 #remove header and borders for windows
 for_window [class="^.*"] border pixel 5
-# hide_edge_borders smart 
+# hide_edge_borders smart
 # default_border normal
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id picom -b
@@ -77,8 +77,8 @@ bar {
 exec_always --no-startup-id feh --bg-scale /home/dave/Pictures/wp.jpg
 
 # brightness control with brightnessctl (might need sudo)
-# bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-# bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+# bindsym XF86MonBrightnessDown exec sudo brightnessctl intel_backlight 5%-
+# bindsym XF86MonBrightnessUp exec sudo brightnessctl intel_backlight +5%
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
