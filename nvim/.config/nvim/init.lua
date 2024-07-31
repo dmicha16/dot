@@ -19,6 +19,7 @@ require("plugins.indent")
 require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.neogen")
+require("plugins.hop")
 
 local lspconfig = require('lspconfig')
 

@@ -74,5 +74,8 @@ return {
 },
 {
     "lepture/vim-jinja"
+},
+{
+    "smoka7/hop.nvim"
 }
 }
