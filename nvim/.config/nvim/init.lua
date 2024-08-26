@@ -20,6 +20,7 @@ require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.neogen")
 require("plugins.hop")
+require("plugins.utils")
 
 local lspconfig = require('lspconfig')
 

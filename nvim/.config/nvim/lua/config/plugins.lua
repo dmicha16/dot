@@ -77,5 +77,8 @@ return {
 },
 {
     "smoka7/hop.nvim"
+},
+{
+    "gbprod/yanky.nvim"
 }
 }

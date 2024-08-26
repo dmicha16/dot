@@ -1,6 +1,7 @@
 local opts = {noremap = true, silent = true}
 
 -- Keymaps for fzf-lua
+--
 vim.keymap.set("n", "<c-P>", function()
   require('fzf-lua').files()
 end, { silent = true })
@@ -28,7 +29,14 @@ vim.keymap.set("n", "<C-J>", function()
   })
 end, opts)
 
+vim.keymap.set("n", "<C-G>", function()
+  require('fzf-lua').resume({
+  })
+end, opts)
+
+
 -- Save all files and quit
+--
 vim.keymap.set("n", "<leader>qa", ":wa | qa<CR>", opts)
 vim.keymap.set("n", "<leader>wq", ":wa<CR>:qa<CR>", opts)
 
@@ -57,3 +65,6 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { noremap = true, silent =
 
 -- Keymap for highlighting all text in a file with Ctrl+A
 vim.keymap.set('n', '<C-a>', 'ggVG', opts)
+
+-- preserve cursor location on yank
+vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")

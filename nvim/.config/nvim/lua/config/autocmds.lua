@@ -30,13 +30,14 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4'
 })
 
--- ensure proper indents for yaml files
-vim.api.nvim_create_augroup('YamlIndent', { clear = true })
-
+-- ensure proper syntax highlight for yml, sls and yaml files
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   pattern = {'*.yml', '*.sls', '*.yaml'},
   command = "set syntax=yaml"
 })
+
+-- ensure proper indents for yaml files
+vim.api.nvim_create_augroup('YamlIndent', { clear = true })
 
 vim.api.nvim_create_autocmd('FileType', {
   group = 'YamlIndent',
