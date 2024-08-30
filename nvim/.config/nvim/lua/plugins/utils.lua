@@ -3,3 +3,8 @@ require("yanky").setup({
         enabled = true,
     },
 })
+
+
+require("gitsigns").setup()
+
+require('log-highlight').setup {}

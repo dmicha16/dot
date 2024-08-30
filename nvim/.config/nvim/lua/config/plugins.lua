@@ -76,9 +76,21 @@ return {
     "lepture/vim-jinja"
 },
 {
-    "smoka7/hop.nvim"
+    "smoka7/hop.nvim",
+    version = "*",
+    opts = {
+        keys = 'etovxqpdygfblzhckisuran'
+    }
 },
 {
     "gbprod/yanky.nvim"
+},
+{
+    "lewis6991/gitsigns.nvim"
+},
+{
+    'fei6409/log-highlight.nvim',
 }
+
+
 }

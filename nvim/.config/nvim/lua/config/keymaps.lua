@@ -68,3 +68,6 @@ vim.keymap.set('n', '<C-a>', 'ggVG', opts)
 
 -- preserve cursor location on yank
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
+
+
+vim.keymap.set('n', "<leader>d", ":HopWord<CR>", opts)
