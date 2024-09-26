@@ -4,7 +4,11 @@ require("yanky").setup({
     },
 })
 
-
 require("gitsigns").setup()
 
 require('log-highlight').setup {}
+
+-- dashboard plugin
+require('alpha').setup(require'alpha.themes.startify'.config)
+
+require('rainbow-delimiters.setup').setup()

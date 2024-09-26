@@ -90,7 +90,12 @@ return {
 },
 {
     'fei6409/log-highlight.nvim',
-}
-
-
+},
+{
+    'goolord/alpha-nvim',
+    dependencies = { 'echasnovski/mini.icons' },
+},
+{
+    'HiPhish/rainbow-delimiters.nvim',
+},
 }
