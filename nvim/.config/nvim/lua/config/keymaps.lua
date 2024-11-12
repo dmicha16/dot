@@ -33,6 +33,7 @@ vim.keymap.set("n", "<C-G>", function()
   require('fzf-lua').resume({
   })
 end, opts)
+--
 
 
 -- Save all files and quit
@@ -60,7 +61,7 @@ vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
 -- LSP
 vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
 
 -- Keymap for highlighting all text in a file with Ctrl+A
@@ -71,3 +72,6 @@ vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 
 
 vim.keymap.set('n', "<leader>d", ":HopWord<CR>", opts)
+
+
+
