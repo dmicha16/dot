@@ -2,6 +2,8 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.keymap.set('n', '<C-w>v', ':vsplit<CR>', { noremap = true })
+
 vim.lsp.set_log_level("debug")
 
 -- load config

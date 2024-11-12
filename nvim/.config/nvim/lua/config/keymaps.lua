@@ -71,7 +71,19 @@ vim.keymap.set('n', '<C-a>', 'ggVG', opts)
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 
 
+-- Hop related settings
 vim.keymap.set('n', "<leader>d", ":HopWord<CR>", opts)
 
+-- panes
+vim.keymap.set('n', "<C-h>", "<C-w>h", opts)
+vim.keymap.set('n', "<C-l>", "<C-w>l", opts)
 
+-- resizing panes
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
+-- indent
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
