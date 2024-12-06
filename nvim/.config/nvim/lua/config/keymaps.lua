@@ -3,7 +3,7 @@ local opts = {noremap = true, silent = true}
 -- Keymaps for fzf-lua
 --
 vim.keymap.set("n", "<c-P>", function()
-  require('fzf-lua').files()
+  require('fzf-lua').files({case_mode ="smart"})
 end, { silent = true })
 
 vim.keymap.set("n", "<c-B>", function()
@@ -13,9 +13,10 @@ end, { silent = true })
 vim.keymap.set("n", "<C-F>", function()
   require('fzf-lua').grep({
     search = '',  -- Leave empty to prompt for search input
-    cmd = "rg --hidden --column --line-number --no-heading --color=always --smart-case"
+    cmd = "rg --hidden --column --line-number --no-heading --color=always --smart-case --glob '!**/.git/**'"
   })
 end, opts)
+
 
 vim.keymap.set("n", "<C-K>", function()
   require('fzf-lua').grep_cword({
@@ -33,7 +34,11 @@ vim.keymap.set("n", "<C-G>", function()
   require('fzf-lua').resume({
   })
 end, opts)
---
+
+vim.keymap.set("n", "<C-S>", function()
+  require('fzf-lua').git_status({
+  })
+end, opts)
 
 
 -- Save all files and quit
@@ -75,6 +80,7 @@ vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 vim.keymap.set('n', "<leader>d", ":HopWord<CR>", opts)
 
 -- panes
+-- vim.keymap.del('n', '<C-h>')
 vim.keymap.set('n', "<C-h>", "<C-w>h", opts)
 vim.keymap.set('n', "<C-l>", "<C-w>l", opts)
 
@@ -87,3 +93,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- indent
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- clear search highlight
+vim.keymap.set("n", "<C-L>", ":nohl<CR>")

@@ -12,13 +12,13 @@ local function trim_trailing_whitespace()
   vim.api.nvim_win_set_cursor(0, pos)         -- Restore the cursor position
 end
 
-vim.api.nvim_create_augroup('TrimTrailingWhitespace', { clear = true })
+-- vim.api.nvim_create_augroup('TrimTrailingWhitespace', { clear = true })
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = 'TrimTrailingWhitespace',
-  pattern = '*',
-  callback = trim_trailing_whitespace
-})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   group = 'TrimTrailingWhitespace',
+--   pattern = '*',
+--   callback = trim_trailing_whitespace
+-- })
 
 
 -- ensure proper indents for python files
