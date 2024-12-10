@@ -42,7 +42,7 @@ require("plugins.lint")
 vim.cmd([[autocmd VimEnter * Neotree show]])
 
 -- enable the colorscheme
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme oxocarbon")
 
 -- load autocmds and keymaps
 require("config.autocmds")
