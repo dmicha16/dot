@@ -96,3 +96,19 @@ vim.keymap.set("v", ">", ">gv")
 
 -- clear search highlight
 vim.keymap.set("n", "<C-L>", ":nohl<CR>")
+
+
+vim.api.nvim_create_user_command(
+    'Blame', -- The custom command name
+    function()
+        vim.cmd('Gitsigns blame_line') -- Command to execute
+    end,
+    { desc = 'Show blame information for the current line' } -- Optional description
+)
+
+-- Move selected text up/down
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+
+
+
