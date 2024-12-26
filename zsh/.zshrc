@@ -43,6 +43,7 @@ source ~/zshrc.d/autosuggestions.zsh
 source ~/zshrc.d/alias.zsh
 source ~/zshrc.d/bindings.zsh
 source ~/zshrc.d/fzf.zsh
+source ~/zshrc.d/journal.zsh
 
 ######
 # autojump (manually installed, see repos/autojump
