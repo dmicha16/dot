@@ -2,7 +2,9 @@
 
 #######
 # source company (private aliases)
-source "${0:A:h}"/company_aliases.zsh
+if [[ -f "${0:A:h}"/company_aliases.zsh ]]; then
+    source "${0:A:h}"/company_aliases.zsh
+fi
 
 #######
 # eza

@@ -12,8 +12,24 @@ setopt incappendhistory
 # Daves antidote settings
 
 # Load Antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+if [[ "$(uname)" == "Darwin" ]]; then
+    # macOS path
+    antidote_path="/opt/homebrew/opt/antidote/share/antidote/antidote.zsh"
+else
+    # Linux path (assuming installed via package manager)
+    antidote_path="/usr/share/zsh-antidote/antidote.zsh"
+    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+fi
+
+# Source antidote if it exists
+if [[ -f $antidote_path ]]; then
+    source $antidote_path
+    antidote load
+else
+    echo "Warning: antidote not found at $antidote_path"
+fi
+
+
 # nice names for antidote plugin dirs
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
@@ -54,7 +70,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.cargo/env"
 
 ######
 # start ssh-agent and add ssh configurations to avoid repeated passphrase prompsts in single session
@@ -62,7 +77,15 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
 #zprof
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Source cargo if it exists
+# (this is mostly for work-envs on linux)
+if [[ -f "$HOME/.cargo/env" ]]; then
+    source "$HOME/.cargo/env"
+fi
 
+# Initialize pyenv if it exists
+if command -v pyenv &> /dev/null; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
