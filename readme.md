@@ -4,12 +4,24 @@ These are all my personal dotfiles I use for writing mainly python on Ubuntu.
 
 To manage my dotfiles, I'm using [gnu stow](https://www.gnu.org/software/stow/).
 
+## Setup
+- git clone this repo to `~/`
+- stow individual configurations
+    - `cd ~/dot`
+    - `stow zsh`
+
+
+## Dependencies
+
+- antidote
+    - macos: `brew install antidote`
+    - linux: `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote`
+
 
 ## List of tools
 
 ### Editing
 - [nvim](https://github.com/neovim/neovim)
-- Occasionally vscode
 
 ### Terminal
 
@@ -32,7 +44,7 @@ To manage my dotfiles, I'm using [gnu stow](https://www.gnu.org/software/stow/).
 ### Notes
 - [obsidian.md](https://obsidian.md/)
 
-## Adding .config configurations to this repo
+## Adding a new .config configurations to this repo
 
 ```
 cd ~/dot
