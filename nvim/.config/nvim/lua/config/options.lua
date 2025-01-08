@@ -13,7 +13,9 @@ vim.opt.title = true
 vim.opt.scrolloff = 17
 vim.opt.cursorline = true
 
-vim.opt.clipboard=unnamedplus
+-- use this setting to yank to clipboard
+-- on linux requires either xlip or xsel
+vim.opt.clipboard = "unnamedplus"
 
 -- Set tab width to 4 spaces
 vim.opt.tabstop = 4
