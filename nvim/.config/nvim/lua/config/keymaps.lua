@@ -111,4 +111,18 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 
+vim.api.nvim_create_user_command("WrapMe", function()
+  vim.opt.wrap = true
+  vim.opt.breakindent = true
+  vim.opt.breakindentopt = { "shift:2" }
+  vim.opt.showbreak = '↪ '
+  print("Wrap enabled")
+end, {})
 
+vim.api.nvim_create_user_command("Unwrap", function()
+  vim.opt.wrap = false
+  vim.opt.breakindent = false
+  vim.opt.breakindentopt = {}
+  vim.opt.showbreak = ''
+  print("Wrap disabled")
+end, {})
