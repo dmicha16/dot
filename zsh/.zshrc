@@ -17,8 +17,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     antidote_path="/opt/homebrew/opt/antidote/share/antidote/antidote.zsh"
 else
     # Linux path (assuming installed via package manager)
-    antidote_path="/usr/share/zsh-antidote/antidote.zsh"
-    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+    antidote_path="/home/dave/.antidote/antidote.zsh"
 fi
 
 # Source antidote if it exists
