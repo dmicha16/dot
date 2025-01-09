@@ -68,21 +68,5 @@ stow i3
 
 ## installing a nerdfont
 
-### Dependencies
-
-- feh
-
-#### tmux
-
-[snazzy theme](https://github.com/ivnvxd/tmux-snazzy)
-
-```
-sudo apt install zsh -y
-```
-
-## dir and config file structure
-
-- ~/repos
-- ~/notes
-- ~/scripts
+*coming soon*
 
