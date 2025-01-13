@@ -37,6 +37,7 @@ alias gl="git log --oneline --decorate --graph"
 alias gas="git add . && git status"
 alias gds="echo 'GIT STAGED \n' && git diff --staged"
 alias gdf="git diff | diff-so-fancy"
+alias lg="lazygit"
 
 #######
 # misc

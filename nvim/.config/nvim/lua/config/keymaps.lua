@@ -11,12 +11,11 @@ vim.keymap.set("n", "<c-B>", function()
 end, { silent = true })
 
 vim.keymap.set("n", "<C-F>", function()
-  require('fzf-lua').grep({
+  require('fzf-lua').grep_project({
     search = '',  -- Leave empty to prompt for search input
     cmd = "rg --hidden --column --line-number --no-heading --color=always --smart-case --glob '!**/.git/**'"
   })
 end, opts)
-
 
 vim.keymap.set("n", "<C-K>", function()
   require('fzf-lua').grep_cword({
