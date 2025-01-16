@@ -88,7 +88,7 @@ alias keymaps="cd $DOTFILES/nvim/.config/nvim/lua/config && ${EDITOR:-nvim} keym
 alias sshconf="${EDITOR:-nvim} ~/.ssh/config"
 
 # open tmux conf
-alias tmuxconf="${EDITOR:-nvim} ~/.tmux.conf"
+alias tmuxconf="cd $DOTFILES && ${EDITOR:-nvim} $DOTFILES/tmux/.tmux.conf"
 
 # list above confs
 alias conf="alias | grep 'conf' | sed 's/alias //g' | bat -l bash"
