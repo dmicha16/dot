@@ -74,7 +74,7 @@ bar {
 
 
 # setting wallpaper using feh
-exec_always --no-startup-id feh --bg-scale /home/dave/Pictures/wp.jpg
+exec_always --no-startup-id feh --bg-scale /home/dave/Pictures/wp2.jpg
 
 # brightness control with brightnessctl (might need sudo)
 # bindsym XF86MonBrightnessDown exec sudo brightnessctl intel_backlight 5%-
