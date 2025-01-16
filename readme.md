@@ -8,10 +8,7 @@ If you find some edge cases, please make a PR, I'll be more than happy to includ
 To deploy my dotfiles, I'm using [gnu stow](https://www.gnu.org/software/stow/), but you can also
 use your own tool, or just simply copy-paste these config files into their appropriate folders.
 
-By using `stow` I can choose to install only the configurations I need based on the OS, such as on macOS, there's no `i3wm` (unfortunately).
-
-> **Note**
-This is of course a very opiniated setup, somethings you might strongly dislike, take only what you feel like taking!
+By using `stow` I can choose to install only the configurations I need based on the OS, such as on macOS there's no `i3wm` (unfortunately).
 
 ## Download and Setup
 - git clone this repo to `~/`
@@ -27,10 +24,11 @@ These are software and packages that you need to install before you can use thes
 - antidote
     - macos: `brew install antidote`
     - linux: `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote`
+- nerdfonts
 
-### List of tools
+## List of tools
 
-### Editing
+### Coding
 - [nvim](https://github.com/neovim/neovim)
 
 ### Terminal
@@ -48,9 +46,13 @@ These are software and packages that you need to install before you can use thes
 - [fzf](https://github.com/junegunn/fzf)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 
+
 ### windows manager
 - [i3wm](https://i3wm.org/)
 - [i3status](https://i3wm.org/docs/i3status.html)
+
+
+## Usage
 
 ## Adding a new .config configurations to this repo
 
@@ -66,7 +68,4 @@ stow i3
 
 `stow -D`
 
-## installing a nerdfont
-
-*coming soon*
 
