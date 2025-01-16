@@ -60,11 +60,15 @@ end, opts)
 vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
 
 -- Neotree
+-- focus/unfocus neotree
 vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
 
 -- LSP
+-- go to defintion
 vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+-- open hover 
 vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+-- rename symbol
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
 
@@ -73,7 +77,6 @@ vim.keymap.set('n', '<C-a>', 'ggVG', opts)
 
 -- preserve cursor location on yank
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
-
 
 -- Hop related settings
 vim.keymap.set('n', "<leader>d", ":HopWord<CR>", opts)
@@ -86,8 +89,8 @@ vim.keymap.set('n', "<C-l>", "<C-w>l", opts)
 -- resizing panes
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>")
 
 -- indent
 vim.keymap.set("v", "<", "<gv")
@@ -96,13 +99,13 @@ vim.keymap.set("v", ">", ">gv")
 -- clear search highlight
 vim.keymap.set("n", "<C-L>", ":nohl<CR>")
 
-
+-- gitsigns blame single line
 vim.api.nvim_create_user_command(
     'Blame', -- The custom command name
     function()
-        vim.cmd('Gitsigns blame_line') -- Command to execute
+        vim.cmd('Gitsigns blame_line')
     end,
-    { desc = 'Show blame information for the current line' } -- Optional description
+    { desc = 'Show blame information for the current line' }
 )
 
 -- Move selected text up/down
@@ -110,6 +113,7 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 
+-- Command to softwrap and unwrap text
 vim.api.nvim_create_user_command("WrapMe", function()
   vim.opt.wrap = true
   vim.opt.breakindent = true
