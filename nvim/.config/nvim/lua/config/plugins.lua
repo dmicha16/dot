@@ -104,9 +104,16 @@ return {
 
 {
   "nyoom-engineering/oxocarbon.nvim"
-  -- Add in any other configuration; 
-  --   event = foo, 
-  --   config = bar
-  --   end,
+},
+{
+   "m4xshen/hardtime.nvim",
+   dependencies = { "MunifTanjim/nui.nvim" },
+   opts = {}
+},
+{
+    "xiyaowong/transparent.nvim",
+    -- this plugin requires eager loading
+    lazy = false,
+    priority = 1000,
 }
 }

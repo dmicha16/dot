@@ -12,3 +12,6 @@ require('log-highlight').setup {}
 require('alpha').setup(require'alpha.themes.startify'.config)
 
 require('rainbow-delimiters.setup').setup()
+
+require('transparent').clear_prefix('Neotree')
+require('transparent').clear_prefix('lualine')
