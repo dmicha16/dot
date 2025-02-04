@@ -11,7 +11,7 @@ vim.keymap.set("n", "<c-B>", function()
 end, { silent = true })
 
 vim.keymap.set("n", "<C-F>", function()
-  require('fzf-lua').grep_project({
+  require('fzf-lua').live_grep({
     search = '',  -- Leave empty to prompt for search input
     cmd = "rg --hidden --column --line-number --no-heading --color=always --smart-case --glob '!**/.git/**'"
   })
@@ -129,3 +129,7 @@ vim.api.nvim_create_user_command("Unwrap", function()
   vim.opt.showbreak = ''
   print("Wrap disabled")
 end, {})
+
+
+vim.api.nvim_set_keymap('n', '<Leader>b', ':call append(line("."), "")<CR>', { noremap = true, silent = true })
+
