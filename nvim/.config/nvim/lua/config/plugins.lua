@@ -109,11 +109,5 @@ return {
    "m4xshen/hardtime.nvim",
    dependencies = { "MunifTanjim/nui.nvim" },
    opts = {}
-},
-{
-    "xiyaowong/transparent.nvim",
-    -- this plugin requires eager loading
-    lazy = false,
-    priority = 1000,
 }
 }
