@@ -11,7 +11,7 @@ vim.keymap.set("n", "<c-B>", function()
 end, { silent = true })
 
 vim.keymap.set("n", "<C-F>", function()
-  require('fzf-lua').live_grep({
+  require('fzf-lua').grep({
     search = '',  -- Leave empty to prompt for search input
     cmd = "rg --hidden --column --line-number --no-heading --color=always --smart-case --glob '!**/.git/**'"
   })
