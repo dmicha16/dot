@@ -1,18 +1,9 @@
 -- return {
---   { "catppuccin/nvim" },
---
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "catppuccin",
---     },
---   },
+--   "nyoom-engineering/oxocarbon.nvim"
+--   -- Add in any other configuration; 
+--   --   event = foo, 
+--   --   config = bar
+--   --   end,
 -- }
 
-return {
-  "nyoom-engineering/oxocarbon.nvim"
-  -- Add in any other configuration; 
-  --   event = foo, 
-  --   config = bar
-  --   end,
-}
+return { "comfysage/evergarden"}
