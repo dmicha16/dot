@@ -61,7 +61,7 @@ vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
 
 -- Neotree
 -- focus/unfocus neotree
-vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
+-- vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
 
 -- LSP
 -- go to defintion
@@ -87,10 +87,21 @@ vim.keymap.set('n', "<C-h>", "<C-w>h", opts)
 vim.keymap.set('n', "<C-l>", "<C-w>l", opts)
 
 -- resizing panes
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Up>", ":resize -10<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize +10<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize +10<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize -10<CR>")
+
+-- tabs
+vim.keymap.set("n", "<leader>nt", function()
+  -- Open a new tab
+  vim.cmd("tabnew")
+  vim.cmd("enew")
+
+  -- Open Neo-tree
+  vim.cmd("Neotree toggle")
+
+end, opts)
 
 -- indent
 vim.keymap.set("v", "<", "<gv")
@@ -111,7 +122,6 @@ vim.api.nvim_create_user_command(
 -- Move selected text up/down
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
-
 
 -- Command to softwrap and unwrap text
 vim.api.nvim_create_user_command("WrapMe", function()
