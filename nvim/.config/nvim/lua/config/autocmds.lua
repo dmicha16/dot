@@ -85,3 +85,11 @@ vim.api.nvim_create_autocmd({'BufLeave', 'FocusLost', 'InsertEnter'}, {
   pattern = '*',
   command = 'set norelativenumber'
 })
+
+-- This requires an autoformatter to be installed (I'm using ruff - https://docs.astral.sh/ruff/editors/setup/)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})

@@ -26,15 +26,46 @@ require("plugins.utils")
 
 local lspconfig = require('lspconfig')
 
-lspconfig.basedpyright.setup {
-    settings = {
-    basedpyright = {
-      disableOrganizeImports = true,
-      disableTaggedHints = true,
-      typeCheckingMode = 'off',
-    },
-  },
-}
+-- Function to detect Python version
+local function get_python_version()
+  local handle = io.popen('python -c "import sys; print(sys.version_info.major); print(sys.version_info.minor)"')
+  if not handle then
+    return nil
+  end
+  local major = handle:read("*l")
+  local minor = handle:read("*l")
+  handle:close()
+  return tonumber(major), tonumber(minor)
+end
+
+-- Function to setup LSP based on Python version
+local function setup_lsp()
+  local major, minor = get_python_version()
+  if major == 2 and minor == 7 then
+    -- Setup basedpyright for Python 2.7
+    lspconfig.basedpyright.setup {
+      settings = {
+        basedpyright = {
+          disableOrganizeImports = true,
+          disableTaggedHints = true,
+          typeCheckingMode = 'off',
+        },
+      },
+    }
+  else
+    -- Setup ruff for other Python versions
+    lspconfig.ruff.setup({
+      init_options = {
+        settings = {
+          -- Ruff language server settings go here
+        }
+      }
+    })
+  end
+end
+
+-- Call the setup function
+setup_lsp()
 
 require("plugins.lint")
 
