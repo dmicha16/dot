@@ -68,4 +68,20 @@ stow i3
 
 `stow -D`
 
+## Outstanding issues as of 2025-04-08
+
+### i3wm
+- automatise `tlp` for power management on thinkpads (in i3wm that is not included by default)
+- fix some of the broken elements in i3status
+
+### neovim
+- enable all LSP functions of Ruff in neovim
+- fix project management
+- spell check LSP
+- LSP for lua
+
+### zsh
+- clean up own theme
+- fix coloring (some elements in the shell don't take the right color in right prompt)
+- better keyboard shortcuts in tmux
 
