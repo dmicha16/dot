@@ -41,9 +41,6 @@ return {
     "danymat/neogen"
 },
 {
-    "neovim/nvim-lspconfig"
-},
-{
     "mfussenegger/nvim-lint"
 },
 {
@@ -112,6 +109,9 @@ return {
 },
 {
     "comfysage/evergarden"
+},
+{
+    "detachhead/basedpyright"
 }
 
 }

@@ -26,13 +26,22 @@ require("plugins.utils")
 
 local lspconfig = require('lspconfig')
 
-lspconfig.ruff.setup({
-  init_options = {
-    settings = {
-      -- Ruff language server settings go here
-    }
-  }
-})
+lspconfig.ruff.setup({})
+
+require('lspconfig').basedpyright.setup {
+  settings = {
+    basedpyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
 
 require("plugins.lint")
 
