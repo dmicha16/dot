@@ -25,6 +25,15 @@ These are software and packages that you need to install before you can use thes
     - macos: `brew install antidote`
     - linux: `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote`
 - nerdfonts
+    - macos: `brew install fontconfig` 
+
+```bash
+brew install --cask \
+font-jetbrains-mono-nerd-font \
+font-caskaydia-cove-nerd-font \
+font-iosevka-term-nerd-font \
+font-fira-mono-nerd-font
+```
 
 ## List of tools
 
