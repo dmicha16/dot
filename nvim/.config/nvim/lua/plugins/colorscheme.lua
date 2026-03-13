@@ -6,4 +6,5 @@
 --   --   end,
 -- }
 
-return { "comfysage/evergarden"}
+return { "EdenEast/nightfox.nvim" }
+-- return { "comfysage/evergarden"}

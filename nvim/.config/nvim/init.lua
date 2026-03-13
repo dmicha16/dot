@@ -24,11 +24,13 @@ require("plugins.neogen")
 require("plugins.hop")
 require("plugins.utils")
 
-local lspconfig = require('lspconfig')
+-- local lspconfig = require('lspconfig')
+--
+-- lspconfig.ruff.setup({})
 
-lspconfig.ruff.setup({})
+vim.lsp.config('ruff', {})
 
-require('lspconfig').basedpyright.setup {
+vim.lsp.config('basedpyright', {
   settings = {
     basedpyright = {
       -- Using Ruff's import organizer
@@ -41,7 +43,7 @@ require('lspconfig').basedpyright.setup {
       },
     },
   },
-}
+})
 
 require("plugins.lint")
 
@@ -49,7 +51,8 @@ require("plugins.lint")
 vim.cmd([[autocmd VimEnter * Neotree show]])
 
 -- enable the colorscheme
-vim.cmd("colorscheme evergarden")
+vim.cmd("colorscheme dawnfox")
+vim.cmd("COQnow --shut-up")
 
 -- load autocmds and keymaps
 require("config.autocmds")

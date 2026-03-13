@@ -42,12 +42,10 @@ autoload -Uz promptinit && promptinit
 
 #######
 # sourcing config files from $HOME/zshrc.d (keep the order)
-source $HOME/zshrc.d/vi_mode.zsh
 source $HOME/zshrc.d/autosuggestions.zsh
 source $HOME/zshrc.d/alias.zsh
 source $HOME/zshrc.d/bindings.zsh
 source $HOME/zshrc.d/fzf.zsh
-source $HOME/zshrc.d/journal.zsh
 
 ######
 # autojump (manually installed, see repos/autojump
@@ -70,28 +68,33 @@ export EDITOR=nvim
 
 ######
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ######
 # start ssh-agent and add ssh configurations to avoid repeated passphrase prompsts in single session
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    eval "$(ssh-agent -s)" > /dev/null
-fi
-ssh-add $HOME/.ssh/id_rsa > /dev/null 2>&1
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     eval "$(ssh-agent -s)" > /dev/null
+# fi
+# ssh-add $HOME/.ssh/id_rsa > /dev/null 2>&1
 
 #zprof
 
 # Source cargo if it exists
 # (this is mostly for work-envs on linux)
-if [[ -f "$HOME/.cargo/env" ]]; then
-    source "$HOME/.cargo/env"
-fi
+# if [[ -f "$HOME/.cargo/env" ]]; then
+#     source "$HOME/.cargo/env"
+# fi
 
 # Initialize pyenv if it exists
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
