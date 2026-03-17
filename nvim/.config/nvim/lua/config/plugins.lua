@@ -112,7 +112,12 @@ return {
     "EdenEast/nightfox.nvim"
 },
 {
+    "sainnhe/everforest"
+},
+{
     "detachhead/basedpyright"
+},
+{
+    "MagicDuck/grug-far.nvim"
 }
-
 }
