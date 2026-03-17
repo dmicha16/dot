@@ -23,35 +23,15 @@ require("plugins.comment")
 require("plugins.neogen")
 require("plugins.hop")
 require("plugins.utils")
-
--- LSP
-vim.lsp.config('ruff', {})
-
-vim.lsp.config('basedpyright', {
-  settings = {
-    basedpyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      },
-    },
-  },
-})
-
-vim.lsp.enable('markdown_oxide')
---
-
--- require("plugins.lint")
+require("plugins.lspconfig")
+require("plugins.grug-far")
 
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])
 
 -- enable the colorscheme
-vim.cmd("colorscheme dawnfox")
+-- vim.cmd("colorscheme dawnfox")
+vim.cmd("colorscheme evergarden")
 vim.cmd("COQnow --shut-up")
 
 -- load autocmds and keymaps
