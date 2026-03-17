@@ -1,7 +1,6 @@
 local opts = {noremap = true, silent = true}
 
 -- Keymaps for fzf-lua
---
 vim.keymap.set("n", "<c-P>", function()
   require('fzf-lua').files({case_mode ="smart"})
 end, { silent = true })
@@ -49,19 +48,8 @@ vim.keymap.set("n", "<leader>wq", ":wa<CR>:qa<CR>", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
--- Persistence
--- Restore the session for the current directory
-vim.keymap.set("n", "<leader>qs", function()
-  require("persistence").load()
-  vim.cmd('Neotree show')
-end, opts)
-
 -- Neogen
 vim.keymap.set('n', '<leader>nd', ':Neogen<CR>', opts)
-
--- Neotree
--- focus/unfocus neotree
--- vim.keymap.set('n', '<leader>nt', ':Neotree<CR>', opts)
 
 -- LSP
 -- go to defintion
@@ -123,15 +111,64 @@ vim.api.nvim_create_user_command(
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
--- Command to softwrap and unwrap text
-vim.api.nvim_create_user_command("WrapMe", function()
-  vim.opt.wrap = true
-  vim.opt.breakindent = true
-  vim.opt.breakindentopt = { "shift:2" }
-  vim.opt.showbreak = '↪ '
-  print("Wrap enabled")
+-- Helper to set buffer-local wrapped-movement mappings
+local function set_wrap_mappings(buf, enable)
+  if enable then
+    -- j/k move by screen lines when no count; counts still use real lines
+    vim.keymap.set({'n','x','o'}, 'j', function()
+      return vim.v.count == 0 and 'gj' or 'j'
+    end, { buffer = buf, expr = true, silent = true, desc = 'j by screen line when wrapped' })
+
+    vim.keymap.set({'n','x','o'}, 'k', function()
+      return vim.v.count == 0 and 'gk' or 'k'
+    end, { buffer = buf, expr = true, silent = true, desc = 'k by screen line when wrapped' })
+
+    -- Optional: make 0/$ act on screen line starts/ends
+    vim.keymap.set({'n','x','o'}, '0', 'g0', { buffer = buf, silent = true, desc = 'Start of screen line' })
+    vim.keymap.set({'n','x','o'}, '$', 'g$', { buffer = buf, silent = true, desc = 'End of screen line' })
+  else
+    -- Remove the buffer-local mappings when unwrapping
+    pcall(vim.keymap.del, {'n','x','o'}, 'j', { buffer = buf })
+    pcall(vim.keymap.del, {'n','x','o'}, 'k', { buffer = buf })
+    pcall(vim.keymap.del, {'n','x','o'}, '0', { buffer = buf })
+    pcall(vim.keymap.del, {'n','x','o'}, '$', { buffer = buf })
+  end
+end
+
+-- Command to enable soft wrap + nice visuals + screen-line movement
+vim.api.nvim_create_user_command('WrapMe', function()
+  vim.opt_local.wrap = true
+  vim.opt_local.linebreak = true         -- wrap at word boundaries
+  vim.opt_local.breakindent = true       -- keep indentation on wrapped segments
+  vim.opt_local.breakindentopt = { 'shift:2' }
+  vim.opt_local.showbreak = '↪ '         -- indicator for wrapped segments (pick what you like)
+  set_wrap_mappings(0, true)
+  print('Wrap enabled')
 end, {})
 
+-- Command to disable soft wrap and restore normal movement
+vim.api.nvim_create_user_command('UnwrapMe', function()
+  vim.opt_local.wrap = false
+  -- reset visuals (optional—comment out if you want to keep them)
+  vim.opt_local.linebreak = false
+  vim.opt_local.breakindent = false
+  vim.opt_local.breakindentopt = {}
+  vim.opt_local.showbreak = ''
+  set_wrap_mappings(0, false)
+  print('Wrap disabled')
+end, {})
+
+-- Single toggle of Wrap
+vim.api.nvim_create_user_command('WrapToggle', function()
+  local enabled = vim.wo.wrap
+  if enabled then
+    vim.cmd('UnwrapMe')
+  else
+    vim.cmd('WrapMe')
+  end
+end, {})
+
+-- Disable the wrapping
 vim.api.nvim_create_user_command("Unwrap", function()
   vim.opt.wrap = false
   vim.opt.breakindent = false
@@ -141,5 +178,25 @@ vim.api.nvim_create_user_command("Unwrap", function()
 end, {})
 
 
+-- unsure
 vim.api.nvim_set_keymap('n', '<Leader>b', ':call append(line("."), "")<CR>', { noremap = true, silent = true })
+
+-- grug-far search and replace
+vim.keymap.set('n', '<leader>rs', function()
+    require('grug-far').open({ 
+        prefills = { 
+            search = vim.fn.expand("<cword>") 
+        } 
+    })
+end, { desc = 'Grug-far: search current word' })
+
+-- search and replace only in current file
+vim.keymap.set('n', '<leader>rsf', function()
+    require('grug-far').open({
+        prefills = {
+            search = vim.fn.expand("<cword>"),
+            paths = vim.fn.expand("%")
+        }
+    })
+end, { desc = "Grugfar: Search current word in current file" })
 

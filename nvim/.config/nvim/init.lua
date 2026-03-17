@@ -24,10 +24,7 @@ require("plugins.neogen")
 require("plugins.hop")
 require("plugins.utils")
 
--- local lspconfig = require('lspconfig')
---
--- lspconfig.ruff.setup({})
-
+-- LSP
 vim.lsp.config('ruff', {})
 
 vim.lsp.config('basedpyright', {
@@ -45,7 +42,10 @@ vim.lsp.config('basedpyright', {
   },
 })
 
-require("plugins.lint")
+vim.lsp.enable('markdown_oxide')
+--
+
+-- require("plugins.lint")
 
 -- open Neotree on startup, but keep focus on files with 'show'
 vim.cmd([[autocmd VimEnter * Neotree show]])
