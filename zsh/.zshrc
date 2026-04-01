@@ -97,6 +97,8 @@ export EDITOR=nvim
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# cargo to path for lua lsp in neovim
+export PATH="$HOME/.cargo/bin:$PATH"
 
-
+# uv and ty installation
 . "$HOME/.local/bin/env"
