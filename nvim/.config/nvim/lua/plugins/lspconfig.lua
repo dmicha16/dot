@@ -1,18 +1,13 @@
 vim.lsp.config('ruff', {})
 
-vim.lsp.config('basedpyright', {
+vim.lsp.config('ty', {
   settings = {
-    basedpyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      },
-    },
-  },
+    ty = {
+      -- ty language server settings go here
+    }
+  }
 })
 
+-- Required: Enable the language servers
+vim.lsp.enable('ty')
 vim.lsp.enable('markdown_oxide')

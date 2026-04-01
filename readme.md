@@ -39,6 +39,9 @@ font-fira-mono-nerd-font
 
 ### Coding
 - [nvim](https://github.com/neovim/neovim)
+- [ty](https://docs.astral.sh/ty/) lsp for python in neovim
+    - can be installed using [uv](https://docs.astral.sh/uv/)
+    - `uv tool install ty@latest`
 
 ### Terminal
 
@@ -63,6 +66,8 @@ font-fira-mono-nerd-font
 
 ## Usage
 
+## How to setup python lsp and formatting
+
 ## Adding a new .config configurations to this repo
 
 ```
@@ -71,7 +76,6 @@ mkdir i3/.config/i3
 mv config i3/.config/i3
 stow i3
 ```
-
 
 ## Removing a stow
 

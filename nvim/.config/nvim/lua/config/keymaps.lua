@@ -38,6 +38,11 @@ vim.keymap.set("n", "<C-S>", function()
   })
 end, opts)
 
+vim.keymap.set("n", "<C-M>", function()
+  require('fzf-lua').diagnostics_document({
+  })
+end, opts)
+
 
 -- Save all files and quit
 --
